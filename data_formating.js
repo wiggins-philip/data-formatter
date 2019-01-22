@@ -428,22 +428,31 @@ function form_email_validator(element_id, form_group){
             var input_text = $(element_id).val();
             var element_id_hash_removed = element_id.substring(1);
             if (input_text == ""){
+              return "nothing input";
+              /*
                 $(form_group).removeClass("has-error has-success has-feedback");
                 $(element_id + "_warning_glyphcon").remove();
+                */
             } else if (input_text.match(mailformat)) {
+
+                return true;
+              /*
                 $(form_group).removeClass("has-error has-feedback");
                 $(element_id + "_warning_glyphcon").remove();
                 $(form_group).addClass("has-success has-feedback");
                 $(form_group).append('<span class="glyphicon glyphicon-ok text-success" id="' + element_id_hash_removed + '_warning_glyphcon"> valid</span>');
-
+              */
             }
             else {
+
+              return false;
+              /*
                 $(form_group).removeClass("has-error has-success has-feedback");
                 $(element_id + "_warning_glyphcon").remove();
 
                 $(form_group).addClass("has-error has-feedback");
                 $(form_group).append('<span class="glyphicon glyphicon-warning-sign text-danger" id="' + element_id_hash_removed + '_warning_glyphcon"> invalid</span>');
-
+              */
             }
         });
 }
