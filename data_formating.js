@@ -1,5 +1,12 @@
 "use strict";
+function run_test() {
+  var input_textbox = document.getElementById("test_input").value
 
+  var output = format_phone_number(input_textbox);
+  var output_textbox = document.getElementById("test_result");
+
+  output_textbox.value = output;
+}
 /*********************************************************
   Format phone number from int to ###-###-#### format
   @parm number
