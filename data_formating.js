@@ -1,6 +1,9 @@
 "use strict";
 
-//Format phone number from int to ###-###-#### format
+/*********************************************************
+  Format phone number from int to ###-###-#### format
+  @parm number
+**********************************************************/
 function format_phone_number(number) {
     var num;
     if (number !== undefined) {
@@ -16,7 +19,10 @@ function format_phone_number(number) {
 }
 
 
-//function will take database YYYY-MM-DD date and convert to MM-DD-YYYY
+/******************************************************
+  function will take database YYYY-MM-DD date and convert to MM-DD-YYYY
+  @param date
+******************************************************/
 function format_date_to_standard(date) {
     var new_datestring = new Date(date);
     var date_yyyy = new_datestring.getFullYear().toString();
@@ -31,7 +37,10 @@ function format_date_to_standard(date) {
     return datestring;
 }
 
-//function will convert date from format MM-DD-YYYY to database format YYYY-MM-DD
+/******************************************************
+  function will convert date from format MM-DD-YYYY to database format YYYY-MM-DD
+  @param date
+******************************************************/
 function format_date_to_database(date) {
     var new_datestring = new Date(date);
     var date_yyyy = new_datestring.getFullYear().toString();
@@ -47,7 +56,10 @@ function format_date_to_database(date) {
 
 }
 
-// enforce YYYY-MM-DD
+/******************************************************
+  enforce YYYY-MM-DD
+  @parm element_id
+******************************************************/
 function input_date_masking(element_id) {
     var date = 0;
     $(element_id) .keydown(function (e) {
@@ -290,13 +302,13 @@ function input_zip_code_masking(element_id, selected_country) {
         });
 }
 
-/*******
+/*************************************************************
  *
  * @param id_type
  * @param element_id
  *
  * masking for input tax. GET type "ein" or "ssn" and the id of the element to mask for Tax format.
- */
+ *******************************************************/
 function input_tax_id_masking(id_type_id, element_id) {
     var id = ""
     $(element_id)
@@ -352,6 +364,7 @@ function input_tax_id_masking(id_type_id, element_id) {
 
 /****************************************
  * Only allow numbers and modifying keys
+ * @parm element_id
  *******************************************/
 function input_allow_numbers_only(element_id) {
     $(element_id)
@@ -374,7 +387,7 @@ function input_allow_numbers_only(element_id) {
  *
  * @param element_id
  * @param decimal_places
- */
+ *******************************************************/
 function input_allow_decimals(element_id, decimal_places){
     $(element_id)
         .keypress(function (e) {
@@ -396,7 +409,11 @@ function input_allow_decimals(element_id, decimal_places){
         });
 }
 
-//will validate email in form and add class of danger if not correct format remove if correct format
+/******************************************************
+  will validate email in form and add class of danger if not correct format remove if correct format
+  @param element_id
+  @param form_group
+******************************************************/
 function form_email_validator(element_id, form_group){
     $(element_id)
         .focusout(function (e) {
